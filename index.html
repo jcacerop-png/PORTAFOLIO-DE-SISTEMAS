@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julio Acero · Portafolio de Sistemas Web Comerciales</title>
+  <meta name="description" content="Portafolio de sistemas web comerciales de Julio Acero: Administrador de Ventas Cashea & Calculadora BCV, y Catálogo + Panel Administrativo para Tiendas de Ropa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       BARRA SUPERIOR FIJA CON TASA BCV AUTOMÁTICA EN VERDE BRILLANTE
+       ========================================================================= -->
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navegación principal">
+      <a class="brand-link" href="#inicio">
+        <span class="brand-badge" aria-hidden="true">JA</span>
+        <span>JULIO ACERO</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#inicio" data-i18n="nav_home">01. Inicio</a>
+        <a href="#sistemas" data-i18n="nav_systems">02. Sistemas en Venta</a>
+        <a href="#precios" data-i18n="nav_pricing">03. Precios Estándar</a>
+        <a href="#contacto" data-i18n="nav_contact">04. Contacto</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="bcv-badge-live" title="Tasa Oficial del BCV sincronizada automáticamente">
+          <span class="bcv-dot" aria-hidden="true"></span>
+          <span><span data-i18n="bcv_today">BCV Hoy:</span> <strong data-bcv-valor>Bs. --</strong></span>
+        </div>
+        <button type="button" id="lang-toggle" class="lang-btn" aria-label="Cambiar idioma / Switch language" title="Cambiar idioma (Español / English)">
+          🌐 <span id="lang-label">EN</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- =========================================================================
+         SECCIÓN 01 · INICIO (CLARO Y DIRECTO)
+         ========================================================================= -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-grid">
+      <div class="hero-box">
+        <span class="section-step" data-i18n="s1_step">Sección 01 &bull; Presentación</span>
+        <h1 class="hero-title" data-i18n="s1_title">
+          Sistemas web administrativos y catálogos digitales listos para tu negocio
+        </h1>
+        <p class="hero-sub" data-i18n="s1_sub">
+          Desarrollo herramientas prácticas para comercios en Venezuela: control de ventas por Cashea, conversión automática a tasa oficial del BCV, inventario en tiempo real y reportes contables en Excel. Entra directamente a cada sistema para probarlo completo.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn-primary" href="#sistemas">
+            <span data-i18n="s1_btn_demos">Ver Sistemas y Entrar a las Demos</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="btn-secondary" href="#precios">
+            <span data-i18n="s1_btn_prices">Ver Precios Estándar</span>
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-card">
+            <strong data-i18n="s1_h1_title">Tasa BCV Automática</strong>
+            <span data-i18n="s1_h1_desc">Todos los sistemas consultan la tasa oficial del BCV en vivo y calculan montos en USD y Bs.</span>
+          </div>
+          <div class="highlight-card">
+            <strong data-i18n="s1_h2_title">Adaptados a PC y Teléfono</strong>
+            <span data-i18n="s1_h2_desc">Botones y tablas optimizados para usarse cómodamente desde cualquier pantalla sin desbordes.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="device-tilt">
+          <div class="device">
+            <div class="device-bar"><span></span><span></span><span></span></div>
+            <div class="device-screen">
+              <aside class="dev-side">
+                <i class="on"></i><i></i><i></i><i></i>
+              </aside>
+              <div class="dev-main">
+                <div class="dev-kpis">
+                  <div><small data-i18n="mock_sales">Ventas</small><strong>$4.820</strong></div>
+                  <div><small data-i18n="mock_down">Inicial</small><strong>40%</strong></div>
+                  <div><small>Cashea</small><strong>12</strong></div>
+                </div>
+                <div class="dev-chart">
+                  <span style="height:38%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:60%"></span><span class="hi" style="height:90%"></span><span style="height:66%"></span>
+                </div>
+                <div class="dev-rows">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card fc-1">
+          <small data-i18n="mock_bcv">Tasa BCV hoy</small>
+          <strong data-bcv-valor>Bs. --</strong>
+        </div>
+        <div class="float-card fc-2">
+          <small data-i18n="mock_verified">Pago comprobado</small>
+          <strong><span class="ok">✓</span> Cashea 40%</strong>
+        </div>
+        <div class="float-card fc-3">
+          <small data-i18n="mock_close">Cierre del mes</small>
+          <div class="mini-bars"><span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:95%"></span></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 02 · SISTEMAS EN VENTA (INGRESO DIRECTO A PANTALLA COMPLETA)
+         ========================================================================= -->
+    <section id="sistemas" class="section-block">
+      <div class="section-header">
+        <span class="section-step" data-i18n="s2_step">Sección 02 &bull; Sistemas en Venta</span>
+        <h2 class="section-title" data-i18n="s2_title">Elige un sistema e ingresa para probarlo</h2>
+        <p class="section-desc" data-i18n="s2_desc">
+          Cada proyecto se abre en pantalla completa con datos ficticios de demostración y tasa oficial BCV activa para que evalúes su funcionamiento real.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROYECTO 1: CASHEA -->
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Nexus Pay · Sistema Administrador Cashea" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge-dark" data-i18n="p1_badge">Proyecto 01 &bull; Gestión Cashea</span>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <span class="project-folder" data-i18n="p1_folder">Sistema Cashea</span>
+            <h3 class="project-title" data-i18n="p1_title">Nexus Pay &bull; Administrador Cashea &amp; Calculadora BCV</h3>
+            <p class="project-desc" data-i18n="p1_desc">
+              Controla las ventas financiadas con Cashea: inicial, monto financiado y comisión del 8%.
+            </p>
+
+            <ul class="feature-list">
+              <li><span class="feature-check">✓</span><span data-i18n-html="p1_f1"><strong>Calculadora BCV:</strong> precios en USD, IVA 16% e inicial editable.</span></li>
+              <li><span class="feature-check">✓</span><span data-i18n-html="p1_f2"><strong>Multisucursal:</strong> Factura Fiscal y Factura Cashea por sede.</span></li>
+              <li><span class="feature-check">✓</span><span data-i18n-html="p1_f3"><strong>Cierre en Excel:</strong> comprueba pagos y exporta el cierre mensual.</span></li>
+            </ul>
+
+            <div class="project-actions">
+              <a class="btn-primary" href="../cashea/index.html?tab=cashea" target="_blank" rel="noopener">
+                <span data-i18n="p1_btn1">Entrar al Admin Cashea</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+              <a class="btn-secondary" href="../cashea/index.html?tab=calculadora" target="_blank" rel="noopener">
+                <span data-i18n="p1_btn2">Abrir Calculadora BCV</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROYECTO 2: TIENDA DE ROPA (CATÁLOGO + ADMIN) -->
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Nova Atelier · Catálogo y Panel Administrativo de Tienda de Ropa" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge-dark" data-i18n="p2_badge">Proyecto 02 &bull; E-Commerce + POS</span>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <span class="project-folder" data-i18n="p2_folder">Catálogo + Panel Admin</span>
+            <h3 class="project-title" data-i18n="p2_title">Nova Atelier &bull; Catálogo Web + Panel Admin de Ropa</h3>
+            <p class="project-desc" data-i18n="p2_desc">
+              Catálogo público para clientes y panel admin para inventario, ventas y caja.
+            </p>
+
+            <ul class="feature-list">
+              <li><span class="feature-check">✓</span><span data-i18n-html="p2_f1"><strong>Catálogo:</strong> tallas, colores y pedido directo por WhatsApp.</span></li>
+              <li><span class="feature-check">✓</span><span data-i18n-html="p2_f2"><strong>Panel admin:</strong> POS, inventario por variantes y caja.</span></li>
+              <li><span class="feature-check">✓</span><span data-i18n-html="p2_f3"><strong>Analítica:</strong> gráficas de ventas y cierre mensual en Excel.</span></li>
+            </ul>
+
+            <div class="project-actions">
+              <a class="btn-primary" href="../tienda-ropa/catalogo.html" target="_blank" rel="noopener">
+                <span data-i18n="p2_btn1">Entrar al Catálogo Web</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+              <a class="btn-secondary" href="../tienda-ropa/admin.html" target="_blank" rel="noopener">
+                <span data-i18n="p2_btn2">Entrar al Panel Admin</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 03 · PRECIOS ESTÁNDAR (CON EQUIVALENTE BCV EN VIVO)
+         ========================================================================= -->
+    <section id="precios" class="section-block">
+      <div class="section-header">
+        <span class="section-step" data-i18n="s3_step">Sección 03 &bull; Precios Estándar</span>
+        <h2 class="section-title" data-i18n="s3_title">Inversión clara según el sistema que necesites</h2>
+        <p class="section-desc" data-i18n="s3_desc">
+          Precios comerciales accesibles de pago único para negocios y emprendimientos. Incluyen adaptación de nombre, colores de tu marca y capacitación de uso.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- PLAN 1 -->
+        <article class="price-card">
+          <span class="price-tag-top" data-i18n="pl1_tag">Sistema Individual</span>
+          <h3 class="price-name" data-i18n="pl1_name">Módulo Cashea &amp; Calculadora BCV</h3>
+          <p class="price-sub" data-i18n="pl1_sub">Ideal para comercios que necesitan ordenar sus ventas financiadas y cuadrar liquidaciones.</p>
+
+          <div class="price-amount">
+            <div class="price-usd">$120 <small data-i18n="price_once">USD / pago único</small></div>
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="pl1_f1">Calculadora de Venta con tasa BCV en vivo e inicial editable.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl1_f2">Panel de Facturas Fiscales y Cashea hasta para 3 sucursales.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl1_f3">Comprobador de pagos recibidos y Cierre de Mes en Excel.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl1_f4">Personalización con el nombre y colores de tu negocio.</span></li>
+          </ul>
+
+          <a class="btn-secondary" href="#contacto" style="margin-top:auto" data-i18n="btn_request">Solicitar este sistema</a>
+        </article>
+
+        <!-- PLAN 2 (DESTACADO) -->
+        <article class="price-card featured">
+          <span class="price-tag-top" data-i18n="pl2_tag">Más Solicitado</span>
+          <h3 class="price-name" data-i18n="pl2_name">Catálogo Web + Panel Admin Tienda</h3>
+          <p class="price-sub" data-i18n="pl2_sub">Solución completa para tiendas de ropa o calzado con catálogo público e inventario sincronizado.</p>
+
+          <div class="price-amount">
+            <div class="price-usd">$200 <small data-i18n="price_once">USD / pago único</small></div>
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="pl2_f1">Catálogo Web público con selector de talla/color y carrito a WhatsApp.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl2_f2">Panel Administrativo de 8 módulos (POS, Inventario, Tandas y Caja BCV).</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl2_f3">Precios automáticos en USD y Bolívares con tasa oficial BCV.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl2_f4">Gráficas de rendimiento y reportes contables en Excel.</span></li>
+          </ul>
+
+          <a class="btn-primary" href="#contacto" style="margin-top:auto" data-i18n="btn_request">Solicitar este sistema</a>
+        </article>
+
+        <!-- PLAN 3 -->
+        <article class="price-card">
+          <span class="price-tag-top" data-i18n="pl3_tag">Pack Completo</span>
+          <h3 class="price-name" data-i18n="pl3_name">Suite Comercial Completa (Todo en Uno)</h3>
+          <p class="price-sub" data-i18n="pl3_sub">Combina el Catálogo Web + Panel Admin de Inventario + Módulo Especializado Cashea.</p>
+
+          <div class="price-amount">
+            <div class="price-usd">$280 <small data-i18n="price_once">USD / pago único</small></div>
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="feature-check">✓</span><span data-i18n="pl3_f1">Incluye los 3 sistemas integrados bajo la identidad de tu marca.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl3_f2">Configuración y puesta en marcha. El costo de dominio y hosting corre por cuenta del comercio.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl3_f3">Una ronda de ajustes iniciales incluida. Cambios adicionales se cotizan aparte.</span></li>
+            <li><span class="feature-check">✓</span><span data-i18n="pl3_f4">30 días de garantía: soporte por errores de código durante ese periodo.</span></li>
+          </ul>
+
+          <a class="btn-secondary" href="#contacto" style="margin-top:auto" data-i18n="btn_quote_suite">Cotizar Suite Completa</a>
+        </article>
+
+      </div>
+      <p class="price-note" data-i18n="price_note">Precios en dólares (USD), pago único. Incluyen 30 días de garantía por errores de código. Dominio, hosting y funciones nuevas no están incluidos y se cotizan aparte.</p>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 04 · CONTACTO DIRECTO (CORREO Y WHATSAPP)
+         ========================================================================= -->
+    <section id="contacto" class="section-block" style="border-bottom:0">
+      <div class="contact-card">
+        <div class="contact-copy">
+          <span class="section-step" data-i18n="s4_step">Sección 04 &bull; Contacto</span>
+          <h2 class="section-title" data-i18n="s4_title">¿Te interesa implementar alguno de estos sistemas?</h2>
+          <p class="section-desc" data-i18n="s4_desc">
+            Ya puedes probar las demostraciones completas arriba. Si deseas adaptarlos con el nombre, logo y catálogo real de tu negocio, contáctame directamente por WhatsApp o correo electrónico para coordinar la entrega.
+          </p>
+          <div class="contact-details">
+            <a class="contact-chip" href="https://wa.me/584248901496?text=Hola%20Julio%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20sistema%20web" target="_blank" rel="noopener">
+              <span class="contact-chip-dot"></span>
+              <span>WhatsApp: <strong>+58-4248901496</strong></span>
+            </a>
+            <a class="contact-chip" href="mailto:julioacero019@gmail.com?subject=Solicitud%20de%20Sistema%20Comercial">
+              <span>✉️ <span data-i18n="contact_email_lbl">Correo:</span> <strong>julioacero019@gmail.com</strong></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn-primary" href="https://wa.me/584248901496?text=Hola%20Julio%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20sistema%20web" target="_blank" rel="noopener">
+            <span data-i18n="btn_whatsapp">Escribir por WhatsApp</span>
+            <span aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="btn-secondary" href="mailto:julioacero019@gmail.com?subject=Solicitud%20de%20Sistema%20Comercial">
+            <span data-i18n="btn_email">Escribir por Correo</span>
+            <span aria-hidden="true">&nearr;</span>
+          </a>
+          <a class="btn-secondary" href="#sistemas">
+            <span data-i18n="btn_back_sys">Volver a los Sistemas</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>&copy; <span id="footer-year">2026</span> Julio Acero &bull; <span data-i18n="footer_rights">Portafolio de Sistemas Comerciales</span></span>
+      <span><a href="mailto:julioacero019@gmail.com" style="color:inherit;text-decoration:none">julioacero019@gmail.com</a> &bull; <a href="https://wa.me/584248901496" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">+58-4248901496</a></span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

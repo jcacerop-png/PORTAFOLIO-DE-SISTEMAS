@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090B0E">
+  <title>Nova Atelier · Catálogo de Moda &amp; Colección</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+  <div class="announcement" data-i18n="ann_bar">Envíos a nivel nacional &bull; Pedidos directos por WhatsApp &bull; Nueva Colección Emerald</div>
+
+  <header class="header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Nova Atelier, inicio">
+        <span class="brand-mark" aria-hidden="true">NA</span>
+        <span class="brand-text">NOVA ATELIER<small>Urban &amp; Chic Studio</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#inicio" data-i18n="nav_home">Inicio</a>
+        <a href="#coleccion" data-i18n="nav_collection">Colección</a>
+        <a href="#nosotros" data-i18n="nav_about">Nosotros</a>
+        <a href="#asesoria" data-i18n="nav_styling">Asesoría</a>
+        <a href="#preguntas" data-i18n="nav_faq">Preguntas</a>
+      </div>
+      <div class="nav-actions">
+        <div class="bcv-pill-live" title="Tasa Oficial del BCV actualizada automáticamente">
+          <span class="bcv-dot" aria-hidden="true"></span>
+          <span>BCV: <strong data-bcv-valor>Bs. --</strong></span>
+        </div>
+        <button type="button" class="lang-pill" id="lang-toggle" title="Cambiar idioma / Switch language">
+          🌐 <span id="lang-label">EN</span>
+        </button>
+        <a class="admin-pill" href="admin.html" title="Abrir Panel Administrativo de la Tienda">⚙️ <span data-i18n="nav_admin">Admin</span></a>
+        <button type="button" class="bag-button" id="open-cart" aria-label="Abrir carrito">
+          <span class="bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+            </svg>
+            <span class="bag-count" id="bag-count">0</span>
+          </span>
+          <span class="bag-label" data-i18n="nav_cart">Carrito</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero_eye">Colección Contemporánea &bull; Edición 2026</p>
+        <h1 data-i18n-html="hero_title">Tu outfit<br>perfecto<br><em>está aquí</em></h1>
+        <p data-i18n="hero_desc">Prendas de diseño minimalista para acompañarte todos los días. Explora nuestra selección en tiempo real, elige tu talla y arma tu look ideal.</p>
+        <div class="hero-btns">
+          <a class="button" href="#coleccion"><span data-i18n="hero_btn1">Explorar la colección</span> <span aria-hidden="true">↘</span></a>
+          <a class="button button-light" href="admin.html"><span data-i18n="hero_btn2">Abrir Panel Admin</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img id="foto-inicio" class="inspectable-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85" alt="Colección Nova Atelier" fetchpriority="high" decoding="async" title="Toca para inspeccionar imagen">
+        <button type="button" class="img-zoom-badge" data-inspect-target="#foto-inicio" aria-label="Inspeccionar imagen">🔍 <span data-i18n="btn_inspect">Inspeccionar</span></button>
+        <div class="hero-note">
+          <strong data-i18n="hero_note_t">Estilo contemporáneo</strong>
+          <span data-i18n="hero_note_d">Cortes limpios, texturas suaves y stock sincronizado en vivo.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Características de Nova Atelier">
+      <div class="ticker-inner">
+        <span data-i18n="tick_1">Stock Sincronizado en Tiempo Real</span>
+        <span data-i18n="tick_2">Atención Personalizada por WhatsApp</span>
+        <span data-i18n="tick_3">Fotografías Libres de Derechos</span>
+        <span data-i18n="tick_4">Conectado al Panel Administrativo</span>
+      </div>
+    </div>
+
+    <section class="section" id="coleccion">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="col_eye">Piezas seleccionadas</p>
+          <h2 data-i18n="col_title">La colección</h2>
+        </div>
+      </div>
+      <div class="catalog-toolbar">
+        <label class="catalog-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path>
+          </svg>
+          <span class="sr-only">Buscar una prenda</span>
+          <input id="product-search" type="search" data-i18n-placeholder="search_ph" placeholder="Buscar por nombre, categoría o color..." autocomplete="off">
+        </label>
+        <label class="catalog-sort">
+          <span data-i18n="sort_lbl">Ordenar</span>
+          <select id="product-sort" aria-label="Ordenar prendas">
+            <option value="all" data-i18n="sort_all">Todos</option>
+            <option value="featured" data-i18n="sort_feat">Destacados</option>
+            <option value="price-asc" data-i18n="sort_asc">Menor precio</option>
+            <option value="price-desc" data-i18n="sort_desc">Mayor precio</option>
+          </select>
+        </label>
+      </div>
+      <div class="catalog-categories" id="category-chips" role="group" aria-label="Categorías de prendas"></div>
+      <div class="products" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="story" id="nosotros">
+      <div class="story-image">
+        <img id="foto-nosotros" class="inspectable-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85" alt="Showroom de Nova Atelier" loading="lazy" decoding="async" title="Toca para inspeccionar imagen">
+        <button type="button" class="img-zoom-badge" data-inspect-target="#foto-nosotros" aria-label="Inspeccionar imagen">🔍 <span data-i18n="btn_inspect">Inspeccionar</span></button>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow" data-i18n="story_eye">Hola, somos Nova Atelier</p>
+        <h2 data-i18n-html="story_title">Descubre<br>nuestra tienda</h2>
+        <p data-i18n="story_desc">Somos un estudio de moda contemporánea enfocado en prendas versátiles, cortes modernos y una experiencia de compra digital conectada directamente con nuestro inventario en vivo.</p>
+        <a class="button button-light" href="#asesoria"><span data-i18n="story_btn">Conócenos un poco más</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section services" id="asesoria">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="srv_eye">Estamos para ayudarte</p>
+          <h2 data-i18n="srv_title">Asesoría Nova Atelier</h2>
+        </div>
+      </div>
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-number">01</div>
+          <h3 data-i18n="srv1_t">Asesoría de estilo</h3>
+          <p data-i18n="srv1_d">¿No sabes qué combinación elegir? Escríbenos y te ayudamos a seleccionar las piezas que mejor se adaptan a tu estilo.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">02</div>
+          <h3 data-i18n="srv2_t">Encuentra tu talla</h3>
+          <p data-i18n="srv2_d">Si estás entre dos tallas, cuéntanos cómo prefieres el ajuste de cada prenda y te recomendamos la medida exacta.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">03</div>
+          <h3 data-i18n="srv3_t">Un look completo</h3>
+          <p data-i18n="srv3_d">Armamos combinaciones completas de vestidos, chaquetas, blusas y pantalones listas para cualquier ocasión.</p>
+        </article>
+      </div>
+      <a class="button service-cta" href="#coleccion"><span data-i18n="srv_btn">Ver prendas disponibles</span> <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="faq" id="preguntas">
+      <div class="faq-inner">
+        <div class="faq-title">
+          <p class="eyebrow" data-i18n="faq_eye">Lo que necesitas saber</p>
+          <h2 data-i18n="faq_title">Preguntas frecuentes</h2>
+          <p data-i18n-html="faq_sub">¿Deseas administrar las prendas, precios o existencias de este catálogo? Entra al <a href="admin.html">Panel Administrativo sin login</a>.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span data-i18n="faq1_q">¿Cómo se sincroniza el catálogo con el panel administrativo?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" hidden data-i18n="faq1_a">Todas las prendas, tallas, colores, precios y fotos se administran desde el Panel Admin. Al publicar o editar una prenda allí, el catálogo se actualiza al instante.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span data-i18n="faq2_q">¿Puedo elegir talla y color antes de comprar?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" hidden data-i18n="faq2_a">¡Sí! Al tocar cualquier prenda verás únicamente los colores y tallas con existencias reales disponibles para agregar a tu carrito.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span data-i18n="faq3_q">¿Cómo finalizo mi pedido?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" hidden data-i18n="faq3_a">Desde el carrito puedes revisar el subtotal y pulsar "Comprar por WhatsApp" para enviar el pedido detallado con prendas, tallas, colores y cantidades.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span data-i18n="faq4_q">¿Qué métodos de pago aceptan?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" hidden data-i18n="faq4_a">Aceptamos Pago Móvil a tasa BCV, transferencias, efectivo y divisas.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">NA</span>
+        <span class="brand-text">NOVA ATELIER<small>Urban &amp; Chic Studio</small></span>
+      </a>
+      <p data-i18n="footer_txt">Catálogo digital sincronizado con Panel de Gestión &bull; Imágenes libres de derechos de autor.</p>
+      <div class="footer-links">
+        <a href="admin.html" data-i18n="footer_admin">Panel Admin</a>
+        <a href="#coleccion" data-i18n="nav_collection">Colección</a>
+        <a href="#preguntas" data-i18n="footer_help">Ayuda</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="cart-overlay"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-head">
+      <h2><span data-i18n="cart_title">Tu carrito</span> <span id="cart-title-count">(0)</span></h2>
+      <button type="button" class="close-button" id="close-cart" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-bottom" id="cart-bottom" hidden>
+      <div class="subtotal"><span data-i18n="cart_sub">Subtotal</span><span id="cart-subtotal">$0</span></div>
+      <p class="shipping-note" data-i18n="cart_note">El pedido se envía formateado con tallas, colores y subtotal directo a WhatsApp.</p>
+      <a class="button checkout" id="checkout" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="cart_checkout">Comprar por WhatsApp</span> <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+
+  <div class="modal-wrap" id="product-modal" role="dialog" aria-modal="true" aria-label="Detalles del producto">
+    <article class="product-modal">
+      <button type="button" class="modal-close" id="close-modal" aria-label="Cerrar detalles">✕</button>
+      <div class="modal-gallery">
+        <div class="main-photo">
+          <img id="modal-image" class="inspectable-img" src="" alt="" title="Toca para inspeccionar en pantalla completa">
+          <button type="button" class="img-zoom-badge" data-inspect-target="#modal-image" aria-label="Inspeccionar imagen">🔍 <span data-i18n="btn_inspect">Inspeccionar</span></button>
+        </div>
+        <div class="thumbnails" id="modal-thumbnails"></div>
+      </div>
+      <div class="modal-details">
+        <p class="eyebrow" data-i18n="mod_eye">Nova Atelier &bull; Disponible</p>
+        <h2 id="modal-name"></h2>
+        <div class="modal-price" id="modal-price"></div>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="option-label"><span data-i18n="mod_color">Color:</span> <span id="selected-color-name"></span></div>
+        <div class="color-options" id="color-options"></div>
+        <div class="option-label"><span data-i18n="mod_size">Talla:</span> <span id="selected-size-name">Elige una talla</span></div>
+        <div class="size-options" id="size-options" aria-describedby="size-error"></div>
+        <p class="size-error" id="size-error" role="alert" hidden data-i18n="mod_err">Selecciona una talla antes de agregar este producto al carrito.</p>
+        <button type="button" class="button modal-add" id="modal-add" data-i18n="mod_add">Agregar al carrito</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- VISOR DE INSPECCIÓN DE IMAGEN A PANTALLA COMPLETA -->
+  <div class="image-inspector" id="image-inspector" role="dialog" aria-modal="true" aria-label="Inspeccionar imagen" hidden>
+    <button type="button" class="inspector-close" id="close-inspector" data-close-inspector aria-label="Salir de inspección">✕</button>
+    <div class="inspector-stage">
+      <img id="inspector-img" src="" alt="">
+      <p class="inspector-caption" id="inspector-caption"></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="catalogo.js"></script>
+</body>
+</html>
